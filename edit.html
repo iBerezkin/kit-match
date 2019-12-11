@@ -1,0 +1,9 @@
+<h1>Editing {{.Title}}</h1> 
+<!-- braces - template directive -->
+
+<form action="/save/{{.Title}}" method="POST"> 
+<!-- Title refer in server_io3.go to p.Title -->
+<div><textarea name="textbody" rows="20" cols="80">{{printf "%s" .Body}}</textarea></div>
+<!-- printf "%s" .Body outputs Body as a string and not a stream of bytes as Body type is -->
+<div><input type="submit" value="Save"></div>
+</form>
